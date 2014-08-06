@@ -1,13 +1,18 @@
-"use strict";
+/**
+ * @jsx React.DOM
+ */
+var App = App || {};
 
-var React = require("react");
+(function() {
+  "use strict";
 
-module.exports = React.createClass({
-  render: function() {
-    return (
-      <li>
-        <span className="text">{this.props.text}</span>
-      </li>
-    );
-  }
-});
+  App.ListItem = React.createClass({
+    render: function() {
+      return (
+        <li>
+          <span className="text">{this.props.todo.get("text")}</span>
+        </li>
+      );
+    }
+  });
+})();

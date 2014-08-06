@@ -1,35 +1,40 @@
-"use strict";
+/**
+ * @jsx React.DOM
+ */
+var App = App || {};
 
-var React = require("react");
+(function() {
+  "use strict";
 
-module.exports = React.createClass({
-  getInitialState: function() {
-    return {
-      text: ""
-    }
-  },
-  
-  render: function() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" onChange={this.onChange} value={this.state.text} />
-        <button type="submit">Add</button>
-      </form>
-    );
-  },
-  
-  onChange: function(e) {
-    this.setState({
-      text: e.target.value
-    });
-  },
-  
-  handleSubmit: function(e) {
-    e.preventDefault();
-    
-    this.props.onSave(this.state.text);
-    this.setState({
-      text: ""
-    });
-  },
-});
+  App.Input = React.createClass({
+    getInitialState: function() {
+      return {
+        text: ""
+      }
+    },
+
+    render: function() {
+      return (
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" onChange={this.onChange} value={this.state.text} />
+          <button type="submit">Add</button>
+        </form>
+      );
+    },
+
+    onChange: function(e) {
+      this.setState({
+        text: e.target.value
+      });
+    },
+
+    handleSubmit: function(e) {
+      e.preventDefault();
+
+      this.props.onSave(this.state.text);
+      this.setState({
+        text: ""
+      });
+    },
+  });
+})();

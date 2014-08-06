@@ -1,0 +1,25 @@
+{
+  "name": "react-exoskeleton-todo",
+  "version": "0.1.0",
+  "homepage": "https://github.com/sergiors/todo-react",
+  "keywords": [
+    "todo"
+  ],
+  "authors": [
+    "Sérgio Rafael Siqueira <sergiorsiqueira9@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.11.1",
+    "exoskeleton": "~0.7.0",
+    "backbone.localstorage": "~1.1.13",
+    "underscore": "~1.6.0"
+  }
+}

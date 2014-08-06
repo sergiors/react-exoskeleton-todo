@@ -3,12 +3,26 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>ToDo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ToDo's</title>
   </head>
 
   <body>
-    <div id="todo"></div>
-    <script src="scripts/bundle.js"></script>
+    <div id="todos"></div>
+    
+    <script src="bower_components/react/react-with-addons.js"></script>
+    <script src="bower_components/react/JSXTransformer.js"></script>
+    <script src="bower_components/exoskeleton/exoskeleton.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/backbone.localstorage/backbone.localStorage.js"></script>
+    
+    <script src="scripts/models/todo.js"></script>
+    <script src="scripts/collections/todos.js"></script>
+    
+    <script type="text/jsx" src="scripts/components/list-item.jsx"></script>
+    <script type="text/jsx" src="scripts/components/list.jsx"></script>
+    <script type="text/jsx" src="scripts/components/input.jsx"></script>
+    <script type="text/jsx" src="scripts/bootstrap.jsx"></script>
   </body>
 
 </html>

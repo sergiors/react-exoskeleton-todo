@@ -1,18 +1,27 @@
-"use strict";
+/**
+ * @jsx React.DOM
+ */
+var App = App || {};
 
-var React = require("react");
-var ListItem = require("./list-item");
+(function() {
+  "use strict";
+  
+  var ListItem = App.ListItem;
 
-module.exports = React.createClass({
-  render: function() {
-    var todos = this.props.todos.map(function(todo) {
-      return (<ListItem text={todo.text} />);
-    });
-    
-    return (
-      <ul className="list">
-        {todos}
-      </ul>
-    );
-  }
-});
+  App.List = React.createClass({
+    render: function() {
+      
+      var items = this.props.todos.map(function(todo) {
+        return (
+          <ListItem todo={todo} />
+        );
+      });
+      
+      return (
+        <ul className="list">
+          {items}
+        </ul>
+      );
+    }
+  });
+}());
