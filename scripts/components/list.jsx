@@ -13,7 +13,7 @@ var App = App || {};
       
       var items = this.props.todos.map(function(todo) {
         return (
-          <ListItem todo={todo} />
+          <ListItem todo={todo} onDestroy={todo.destroy.bind(todo)} />
         );
       });
       

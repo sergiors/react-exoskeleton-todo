@@ -10,7 +10,8 @@ var App = App || {};
     render: function() {
       return (
         <li>
-          <span className="text">{this.props.todo.get("text")}</span>
+          <span>{this.props.todo.get("text")}</span>
+          <span className="destroy" onClick={this.props.onDestroy}>&times;</span>
         </li>
       );
     }
