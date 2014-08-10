@@ -5,10 +5,10 @@ var App = App || {};
 
 (function() {
   "use strict";
-  
+
   var Input = App.Input;
   var List = App.List;
-  
+
   var Bootstrap = React.createClass({
     componentDidMount: function() {
       this.props.todos.on("add remove change", this.forceUpdate.bind(this, null));
@@ -17,7 +17,9 @@ var App = App || {};
 
     render: function() {
       return (
-        <div>
+        <div className="container">
+          <h1>Todo List</h1>
+          <h2>React and Exoskeleton</h2>
           <Input onSave={this.onSave} />
           <List todos={this.props.todos} />
         </div>
@@ -30,6 +32,6 @@ var App = App || {};
       });
     }
   });
-  
+
   React.renderComponent(<Bootstrap todos={App.Todos} />, document.getElementById("todos"));
 })();
