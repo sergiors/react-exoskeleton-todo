@@ -31,6 +31,10 @@ var App = App || {};
     handleSubmit: function(e) {
       e.preventDefault();
 
+      if ( !this.state.text ) {
+        return false;
+      }
+
       this.props.onSave(this.state.text);
       this.setState({
         text: ""
