@@ -113,6 +113,19 @@ ul li {
           border-radius: 2px;
 }
 
+ul li > input {
+  display: none;
+}
+
+ul li.active > input {
+  display: block;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+}
+
 .destroy {
   position: absolute;
   top: 12px;

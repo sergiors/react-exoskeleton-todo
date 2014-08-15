@@ -13,12 +13,17 @@ var App = App || {};
 
       var items = this.props.todos.map(function(todo) {
         return (
-          <ListItem key={todo.id} todo={todo} onDestroy={todo.destroy.bind(todo)} />
+          <ListItem
+            key={todo.id}
+            todo={todo}
+            onSave={todo.save.bind(todo)}
+            onDestroy={todo.destroy.bind(todo)}
+          />
         );
       });
 
       var total = this.props.todos.length;
-      var s = total <= 1 ? '' : 's';
+      var s = total <= 1 ? "" : "s";
 
       return (
         <div>
@@ -30,4 +35,4 @@ var App = App || {};
       );
     }
   });
-}());
+})();
