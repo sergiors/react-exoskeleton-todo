@@ -4,7 +4,10 @@ This is a simple project designed on the top of [React.js](http://reactjs.net/) 
 
 
 ### Motivation
-Initially, was studying purposes. Then, community commitment to get always better.
+Initially, was studying purposes. Then, community commitment to get always better, even improving personal knowledges with different concept instances.
 
 ### Demonstration
 If you want to get a sneak, feel free to look unto our [example page](http://www.facebook.com/l.php?u=http%3A%2F%2Fsergiors.github.io%2Freact-exoskeleton-todo%2F&h=jAQGSizxh).
+
+### License
+It's simply [MIT](http://opensource.org/licenses/MIT).
