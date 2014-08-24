@@ -12,16 +12,18 @@ var App = App || {};
         text: ""
       }
     },
-    
+
     render: function() {
       return (
         <form onSubmit={this.handleSubmit}>
-          <input type="text" onChange={this.onChange} value={this.state.text} autoFocus={true} />
+          <input className="input" type="text" onChange={this.onChange}
+            value={this.state.text} autoFocus={true}
+            placeholder="What needs to be done ?"/>
           <button type="submit">Add</button>
         </form>
       );
     },
-    
+
     onChange: function(e) {
       this.setState({
         text: e.target.value
@@ -30,7 +32,7 @@ var App = App || {};
 
     handleSubmit: function(e) {
       e.preventDefault();
-      
+
       var text = this.state.text.trim();
 
       if (!text) {
