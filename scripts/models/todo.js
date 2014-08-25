@@ -5,8 +5,9 @@ var App = App || {};
 
   App.Todo = Backbone.Model.extend({
     defaults:{
-      text: ""
+      text: "",
+      done: false
     }
   });
-  
+
 })();

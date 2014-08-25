@@ -26,6 +26,10 @@ h2 {
   text-align: center;
   color: #999;
 }
+::-webkit-input-placeholder { color: #bbb; }
+:-moz-placeholder { color: #bbb; }
+::-moz-placeholder { color: #bbb;  }
+:-ms-input-placeholder { color: #bbb;  }
 
 .container {
   margin: 20px auto;
@@ -42,7 +46,7 @@ form {
   position: relative;
 }
 
-input[type="text"] {
+.input {
   outline: none;
   padding: 14px 20px;
   width: 100%;
@@ -56,7 +60,6 @@ input[type="text"] {
   -webkit-border-radius: 5px;
      -moz-border-radius: 5px;
           border-radius: 5px;
-
 }
 
 button[type="submit"] {
@@ -83,23 +86,34 @@ button[type="submit"]:hover {
   background: #E66A65;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
+.tasks {
+  text-align: center;
+  color: #999;
+  font-size: 0.875em;
+}
+.tasks-done, .tasks-left {
+  padding: 3px 6px;
+  display: inline-block;
+  margin-right: 5px;
+}
+.tasks-done strong{
+  margin-left: 5px;
+  color: #85ada7;
+}
+.tasks-left {
+  margin-left: 5px;
 }
 
-ul li {
-  margin: 10px 0;
-  padding: 16px 10px;
-  position: relative;
-  list-style: none;
-  color: #bcbcbc;
-  font-size: 1.1em;
-  background: #fff;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-     -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-          box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+.tasks-left strong{
+  color: #F07F7F;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+     -moz-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
   -webkit-animation: adds 0.5s ease-out;
      -moz-animation: adds 0.5s ease-out;
        -o-animation: adds 0.5s ease-out;
@@ -113,23 +127,120 @@ ul li {
           border-radius: 2px;
 }
 
-ul li > input {
-  display: none;
+.list li {
+  margin: 0;
+  padding: 0;
+  height: 60px;
+  position: relative;
+  list-style: none;
+  background: #fff;
+  border-bottom: 1px dotted #CCC;
+  -webkit-animation: adds 0.5s ease-out;
+     -moz-animation: adds 0.5s ease-out;
+       -o-animation: adds 0.5s ease-out;
+          animation: adds 0.5s ease-out;
+  -webkit-transform: rotate3d(0,0,0,0);
+  -webkit-transition: 0.3s;
+     -moz-transition: 0.3s;
+          transition: 0.3s;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+}
+.list li:last-child {
+  border-color: transparent;
 }
 
-ul li.active > input {
-  display: block;
+.list li:after {
+  content: "";
+  border-left: 1px solid #F5D6D6;
+  border-right: 1px solid #F5D6D6;
+  width: 2px;
+  position: absolute;
+  top: 0px;
+  left: 40px;
+  height: 100%;
+}
+
+
+.done-update {
+  outline: medium none;
+  text-align: center;
+  width: 40px;
+  height: auto;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  margin: auto 0px;
+  backface-visibility: order: medium none;
+  cursor: pointer;
+  -webkit-appearance: none;
+      -ms-appearance: none;
+       -o-appearance: none;
+          appearance: none;
+}
+.done-update:after {
+  content: '✔';
+  line-height: 43px;
+  font-size: 20px;
+  color: #d9d9d9;
+  text-shadow: 0 -1px 0 #bfbfbf;
+}
+.done-update:checked:after {
+  color: #85ada7;
+  text-shadow: 0 1px 0 #669991;
+  bottom: 1px;
+  position: relative;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .done-update {
+    height: 40px;
+  }
+}
+
+.view {
+  position: relative;
+  margin-left: 40px;
 }
 
 label {
-  display: block;
+  display: inline-block;
+  padding: 16px;
   cursor: pointer;
+  color: #888;
+  font-size: 1.1em;
+  line-height: 1.6em;
+}
+.done {
+  color: #bcbcbc;
+  text-decoration: line-through;
+}
+
+.text-update {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 16px;
+  line-height: 60px;
+  width: 100%;
+  font-size: 1.1em;
+  border: none;
+  outline: none;
+  box-shadow: inset 0px 1px 20px rgba(0,0,0,0.2);
+}
+
+.active label{
+  display:none;
+}
+.active .text-update{
+  display:block;
 }
 
 .destroy {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 16px;
+  right: 16px;
   display: block;
   padding: 0px 8px;
   font-size: 1.6em;
@@ -149,13 +260,6 @@ label {
   color: #fff;
   background: #fc756f;
   box-shadow: inset 0px 1px 2px rgba(0,0,0,0.2);
-}
-
-.total {
-  color: #999;
-  text-align: center;
-  font-size: 1em;
-  font-weight: 900;
 }
 
 @-webkit-keyframes adds {
