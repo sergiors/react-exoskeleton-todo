@@ -62,7 +62,7 @@ form {
           border-radius: 5px;
 }
 
-button[type="submit"] {
+.button {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -82,7 +82,7 @@ button[type="submit"] {
      -moz-transition: 0.3s;
           transition: 0.3s;
 }
-button[type="submit"]:hover {
+.button:hover {
   background: #E66A65;
 }
 
@@ -98,7 +98,7 @@ button[type="submit"]:hover {
 }
 .tasks-done strong{
   margin-left: 5px;
-  color: #85ada7;
+  color: #47b252;
 }
 .tasks-left {
   margin-left: 5px;
@@ -204,9 +204,8 @@ button[type="submit"]:hover {
 }
 
 label {
-  display: inline-block;
+  display: block;
   padding: 16px;
-  cursor: pointer;
   color: #888;
   font-size: 1.1em;
   line-height: 1.6em;
@@ -237,29 +236,55 @@ label {
   display:block;
 }
 
-.destroy {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  display: block;
-  padding: 0px 8px;
-  font-size: 1.6em;
-  color: #fc756f;
-  cursor: pointer;
-  box-shadow: inset 0px 1px 2px transparent;
-  -webkit-border-radius: 50%;
-     -moz-border-radius: 50%;
-          border-radius: 50%;
-  -webkit-transition: all 0.5s;
-     -moz-transition: 0.5s;
-          transition: 0.5s;
-
+.list li:hover .actions {
+  display: inline-block;
 }
 
+.actions {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  display: none;
+  padding: 4px 8px;
+  color: #fff;
+  font-size: 0.75em;
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+     -moz-transition: all 0.2s;
+          transition: all 0.2s;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-transition: 0.3s;
+     -moz-transition: 0.3s;
+          transition: 0.3s;
+}
+
+.update {
+  right: 68px;
+  color: #47b252;
+  border: solid 1px #47b252;
+}
+.update:hover {
+  color: #fff;
+  background: #47b252;
+  -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.2), 0 0 10px rgba(71, 178, 82, 0.3);
+     -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.2), 0 0 10px rgba(71, 178, 82, 0.3);
+          box-shadow: 0px 1px 2px rgba(0,0,0,0.2), 0 0 10px rgba(71, 178, 82, 0.3);
+}
+
+.destroy {
+  color: #fc756f;
+  border: solid 1px #fc756f;
+}
 .destroy:hover {
   color: #fff;
   background: #fc756f;
-  box-shadow: inset 0px 1px 2px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.2), 0 0 10px rgba(252, 117, 111, 0.3);
+     -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.2), 0 0 10px rgba(252, 117, 111, 0.3);
+          box-shadow: 0px 1px 2px rgba(0,0,0,0.2), 0 0 10px rgba(252, 117, 111, 0.3);
 }
 
 @-webkit-keyframes adds {
