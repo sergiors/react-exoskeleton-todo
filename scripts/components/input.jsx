@@ -19,7 +19,7 @@ var App = App || {};
           <input className="input" type="text" onChange={this.onChange}
             value={this.state.text} autoFocus={true}
             placeholder="What needs to be done ?"/>
-          <button type="submit">Add</button>
+          <button className="button" type="submit">Add</button>
         </form>
       );
     },

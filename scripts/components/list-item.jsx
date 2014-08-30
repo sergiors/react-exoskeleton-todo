@@ -35,14 +35,13 @@ var App = App || {};
           <input className="done-update" type="checkbox"
             checked={this.props.todo.get("done")} onChange={this.onChangeCheckbox} />
           <div className="view">
-            <label onDoubleClick={this.handleEdit.bind(this,id)} className={isDone}>
-              {this.props.todo.get("text")}
-            </label>
+            <label className={isDone}>{this.props.todo.get("text")}</label>
             <input className="text-update" ref={id} type="text"
               value={this.state.text} onChange={this.onChange}
               onKeyDown={this.handleKeyDown} />
+            <span className="actions update"  onClick={this.handleEdit.bind(this,id)}>update</span>
+            <span className="actions destroy" onClick={this.props.onDestroy}>delete</span>
           </div>
-          <span className="destroy" onClick={this.props.onDestroy}>&times;</span>
         </li>
       );
     },
