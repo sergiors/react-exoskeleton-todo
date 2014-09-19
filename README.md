@@ -1,6 +1,6 @@
 # React ft. Exoskeleton.js: To do list
 
-This is a simple project designed on the top of [React.js](http://reactjs.net/) and [Exoskeleton.js](exosjs.com) ([Backbone.js](http://backbonejs.org) without dependencies) inspired by the famous [TodoMVC](http://todomvc.com/) front-end application architecture boilerplate.
+This is a simple project designed on the top of [React.js](http://facebook.github.io/react/) and [Exoskeleton.js](http://exosjs.com/) ([Backbone.js](http://backbonejs.org/) without dependencies) inspired by the famous [TodoMVC](http://todomvc.com/) front-end application architecture boilerplate.
 
 
 ### Motivation
